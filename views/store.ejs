@@ -1,75 +1,120 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>The Generics | Store</title>
+        <title>The Nike | Store</title>
         <meta name="description" content="This is the description">
         <link rel="stylesheet" href="styles.css" />
-        <script src="https://checkout.stripe.com/checkout.js" defer></script>
-        <script>
-            var stripePublicKey = '<%= stripePublicKey %>'
-        </script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/ecf4b41ce0.js" crossorigin="anonymous"></script>
+
         <script src="store.js" defer></script>
+        <script src="front.js" defer></script>
+
     </head>
     <body>
-        <header class="main-header">
-            <nav class="main-nav nav">
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="store.html">STORE</a></li>
-                    <li><a href="about.html">ABOUT</a></li>
-                </ul>
-            </nav>
-            <h1 class="band-name band-name-large">The Generics</h1>
-        </header>
-        <section class="container content-section">
-            <h2 class="section-header">MUSIC</h2>
-            <div class="shop-items">
-                <% items.music.forEach(function(item){ %>
-                    <div class="shop-item" data-item-id="<%= item.id %>">
-                        <span class="shop-item-title"><%= item.name %></span>
-                        <img class="shop-item-image" src="Images/<%= item.imgName %>">
-                        <div class="shop-item-details">
-                            <span class="shop-item-price">$<%= item.price / 100 %></span>
-                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand">Nike Shoe</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link"  href="#" id="HomeRoute">HOME <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link"  href="#" id="StoreRoute">STORE</a>
+                    </li>
+                </div>
+            </div>
+        </nav>
+        
+        <section class="container content-section mt-5">
+            <h2 class="section-header">Nike Shoes</h2>
+            <div class="row">
+                <div class="col-md-8 col-sm-12">
+                    <div class="row">
+                        <% items.music.forEach(function(item){ %>
+                            <div class="col-md-6 mt-5">
+                                <div class="card">
+                                    <div class="card-title">
+                                        <h6 class="card-header"><%= item.name %></h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="shop-item" data-item-id="<%= item.id %>">
+                                            <img class="shop-item-image" src="<%= item.imgName %>">
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="shop-item-details">
+                                            <span class="shop-item-price">$<%= item.price / 100 %></span>
+                                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }) %>
+                        <% items.merch.forEach(function(item){ %>
+                    
+                            <div class="col-md-6 mt-5">
+                                <div class="card">
+                                    <div class="card-title">
+                                        <h6 class="card-header">
+                                            <%= item.name %>
+                                        </h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="shop-item" data-item-id="<%= item.id %>">
+                                        </div>
+                                        <img class="shop-item-image" src="<%= item.imgName %>">
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="shop-item-details">
+                                            <span class="shop-item-price">$<%= item.price / 100 %></span>
+                                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                                        </div>   
+                                    </div>
+                                </div>
+                            </div>
+                        <% }) %>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 col-sm-12 mt-5">
+                    <div class="card">
+                        <div class="card-title bg-info text-center">
+                            <h6 style="color:gold;" class="card-header">Shopping-cart</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="cart-row" style="font-size: 10px;">
+                                <span class="cart-item cart-header cart-column">ITEM</span>
+                                <span class="cart-price cart-header cart-column">PRICE</span>
+                                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+                            </div>
+                            <div class="cart-items" style="font-size: 10px;">
+                            </div>
+                            <div class="cart-total" style="font-size: 10px;">
+                                <strong class="cart-total-title">Total</strong>
+                                <span class="cart-total-price">$0</span>
+                            </div>
+                            <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
                         </div>
                     </div>
-                <% }) %>
+                </div>
             </div>
+
         </section>
-        <section class="container content-section">
-            <h2 class="section-header">MERCH</h2>
-            <div class="shop-items">
-                <% items.merch.forEach(function(item){ %>
-                    <div class="shop-item" data-item-id="<%= item.id %>">
-                        <span class="shop-item-title"><%= item.name %></span>
-                        <img class="shop-item-image" src="Images/<%= item.imgName %>">
-                        <div class="shop-item-details">
-                            <span class="shop-item-price">$<%= item.price / 100 %></span>
-                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
-                        </div>
-                    </div>
-                <% }) %>
-            </div>
-        </section>
-        <section class="container content-section">
-            <h2 class="section-header">CART</h2>
-            <div class="cart-row">
-                <span class="cart-item cart-header cart-column">ITEM</span>
-                <span class="cart-price cart-header cart-column">PRICE</span>
-                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
-            </div>
-            <div class="cart-items">
-            </div>
-            <div class="cart-total">
-                <strong class="cart-total-title">Total</strong>
-                <span class="cart-total-price">$0</span>
-            </div>
-            <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
-        </section>
-        <footer class="main-footer">
+        <footer class="main-footer mt-5">
             <div class="container main-footer-container">
-                <h3 class="band-name">The Generics</h3>
-                <ul class="nav footer-nav">
+                <h3 class="band-name">The Nike Store</h3>
+                <ul class="nav footer-nav text-right">
                     <li>
                         <a href="https://www.youtube.com" target="_blank">
                             <img src="Images/YouTube Logo.png">

@@ -338,3 +338,38 @@ html, body {
     margin: 40px auto 80px auto;
     font-size: 1.75em;
 }
+
+/* Home Page */
+.welcome-page {
+    background: url('./Images/background.jpg') fixed no-repeat;
+    background-size: cover;
+    min-height: 400px;
+    margin: 0;
+    padding: 0 !important;
+}
+.welcome-cover-page {
+    background:#00000099;
+    min-height: 400px;
+}
+
+.welcome-page-info {
+    margin-top: 100px;
+    text-align: center !important;
+}
+.welcome-page-info h3{
+    color: white;
+    font-size: 32px;
+    font-family: 'Inria Serif', serif;
+    font-weight: 700;
+}
+.welcome-page-info p {
+    color: #ffffff8f;
+    margin-top: 30px;
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+.btn-mysetting{
+    border-radius: 20px;
+    color:red;
+}

@@ -2,41 +2,41 @@
   "music": [
     {
       "id": 1,
-      "name": "Album 1",
+      "name": "Nike React Element 55 (Alabama) Men's Shoe",
       "price": 1299,
-      "imgName": "Album 1.png"
+      "imgName": "https://c.static-nike.com/a/images/t_PDP_1280_v1/f_auto/c9qfj20kh0g1dhnaogid/react-element-55-alabama-mens-shoe-JKgHzW.jpg"
     },
     {
       "id": 2,
-      "name": "Album 2",
+      "name": "PG 3 Basketball Shoe",
       "price": 1499,
-      "imgName": "Album 2.png"
+      "imgName": "https://c.static-nike.com/a/images/t_PDP_1280_v1/f_auto/zaiywkaxptzxmajetrd7/pg-3-basketball-shoe-nzrq5r.jpg"
     },
     {
       "id": 3,
-      "name": "Album 3",
+      "name": "Nike Air Max 97 SE Floral Women's Shoe",
       "price": 999,
-      "imgName": "Album 3.png"
+      "imgName": "https://c.static-nike.com/a/images/t_PDP_1280_v1/f_auto/zkmxan1hfzpbe8uduxfy/air-max-97-se-floral-shoe-ptHX59.jpg"
     },
     {
       "id": 4,
-      "name": "Album 4",
+      "name": "Nike Joyride Run Flyknit Men's Running Shoe",
       "price": 1999,
-      "imgName": "Album 4.png"
+      "imgName": "https://c.static-nike.com/a/images/t_PDP_1280_v1/f_auto/oyhemtbkghuegy9gpo0i/joyride-run-flyknit-running-shoe-PcjT8s.jpg"
     }
   ],
   "merch": [
     {
       "id": 5,
-      "name": "T-Shirt",
+      "name": "Air Jordan 1 Mid Shoe",
       "price": 1999,
-      "imgName": "Shirt.png"
+      "imgName": "https://c.static-nike.com/a/images/t_PDP_1280_v1/f_auto/n6emfdrrnssozw6vz6au/air-jordan-1-mid-shoe-DfTlmV.jpg"
     },
     {
       "id": 6,
-      "name": "Coffee Cup",
+      "name": "Nike Air Huarache Men's Shoe",
       "price": 699,
-      "imgName": "Cofee.png"
+      "imgName": "https://c.static-nike.com/a/images/t_PDP_1280_v1/f_auto/i2uyvwsvaoqgubkghwos/air-huarache-mens-shoe-eoToq9X2.jpg"
     }
   ]
 }

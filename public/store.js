@@ -26,55 +26,57 @@ function ready() {
     document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
 }
 
-var stripeHandler = StripeCheckout.configure({
-    key: stripePublicKey,
-    locale: 'en',
-    token: function(token) {
-        var items = []
-        var cartItemContainer = document.getElementsByClassName('cart-items')[0]
-        var cartRows = cartItemContainer.getElementsByClassName('cart-row')
-        for (var i = 0; i < cartRows.length; i++) {
-            var cartRow = cartRows[i]
-            var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
-            var quantity = quantityElement.value
-            var id = cartRow.dataset.itemId
-            items.push({
-                id: id,
-                quantity: quantity
-            })
-        }
+// var stripeHandler = StripeCheckout.configure({
+//     key: stripePublicKey,
+//     locale: 'en',
+//     token: function(token) {
+//         var items = []
+//         var cartItemContainer = document.getElementsByClassName('cart-items')[0]
+//         var cartRows = cartItemContainer.getElementsByClassName('cart-row')
+//         for (var i = 0; i < cartRows.length; i++) {
+//             var cartRow = cartRows[i]
+//             var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+//             var quantity = quantityElement.value
+//             var id = cartRow.dataset.itemId
+//             items.push({
+//                 id: id,
+//                 quantity: quantity
+//             })
+//         }
 
-        fetch('/purchase', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify({
-                stripeTokenId: token.id,
-                items: items
-            })
-        }).then(function(res) {
-            return res.json()
-        }).then(function(data) {
-            alert(data.message)
-            var cartItems = document.getElementsByClassName('cart-items')[0]
-            while (cartItems.hasChildNodes()) {
-                cartItems.removeChild(cartItems.firstChild)
-            }
-            updateCartTotal()
-        }).catch(function(error) {
-            console.error(error)
-        })
-    }
-})
+//         fetch('/purchase', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json',
+//                 'Accept': 'application/json'
+//             },
+//             body: JSON.stringify({
+//                 stripeTokenId: token.id,
+//                 items: items
+//             })
+//         }).then(function(res) {
+//             return res.json()
+//         }).then(function(data) {
+//             alert(data.message)
+//             var cartItems = document.getElementsByClassName('cart-items')[0]
+//             while (cartItems.hasChildNodes()) {
+//                 cartItems.removeChild(cartItems.firstChild)
+//             }
+//             updateCartTotal()
+//         }).catch(function(error) {
+//             console.error(error)
+//         })
+//     }
+// })
 
 function purchaseClicked() {
     var priceElement = document.getElementsByClassName('cart-total-price')[0]
     var price = parseFloat(priceElement.innerText.replace('$', '')) * 100
-    stripeHandler.open({
-        amount: price
-    })
+
+    console.log(price);
+    // stripeHandler.open({
+    //     amount: price
+    // })
 }
 
 function removeCartItem(event) {
@@ -93,8 +95,8 @@ function quantityChanged(event) {
 
 function addToCartClicked(event) {
     var button = event.target
-    var shopItem = button.parentElement.parentElement
-    var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
+    var shopItem = button.parentElement.parentElement.parentElement
+    var title = shopItem.getElementsByClassName('card-header')[0].innerText
     var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
     var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
     var id = shopItem.dataset.itemId
@@ -122,7 +124,7 @@ function addItemToCart(title, price, imageSrc, id) {
         <span class="cart-price cart-column">${price}</span>
         <div class="cart-quantity cart-column">
             <input class="cart-quantity-input" type="number" value="1">
-            <button class="btn btn-danger" type="button">REMOVE</button>
+            <button class="btn btn-danger" type="button"><i class="fas fa-trash" style="color:white;"></i></button>
         </div>`
     cartRow.innerHTML = cartRowContents
     cartItems.append(cartRow)

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Nike | Store</title>
+        <meta name="description" content="This is the description">
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/ecf4b41ce0.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Inria+Serif:400,700|Open+Sans:400,600,700&display=swap" rel="stylesheet">
+
+        <script src="store.js" defer></script>
+        <script src="front.js" defer></script>
+
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand">Nike Shoe</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link"  href="#" id="HomeRoute">HOME <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link"  href="#" id="StoreRoute">STORE</a>
+                    </li>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Welcome  -->
+        <section class="container-fluid welcome-page">
+            <div class="container-fluid welcome-cover-page">
+                <div class="row">
+                    <div class="col-md-4 offset-md-4">
+                        <div class="welcome-page-info text-center">
+                            <h3>Welcome To Nike Store <i class="fas fa-store" style="color:white;"></i></h3>
+                            <p class="mb-4">The Best Shop in Myanmar, providing Nike Shoes.</p>
+                            <button id="StoreBtn" style="border-radius: 20px;" class="btn btn-mysetting btn-info">Go to Store</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container mt-5">
+                <div class="text-center mt-4 mb-5">
+                    <h2>Best Collections</h2>
+                </div>
+                <div class="row mt-4 mb-4">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <img src="Images/maleshopping.jpg" alt="maleshop" class="card-img-top">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Men's Collections</h4>
+                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque libero, reprehenderit laborum aut eius temporibus iusto ipsum facere pariatur! Ipsa eum molestiae, animi ratione blanditiis cum mollitia illum voluptatem eligendi.</p>
+                                <button style="border-radius: 20px;" class="btn btn-success">Go To Store <i class="fas fa-hand-point-right" style="color: white;"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row mt-4 mb-4">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mb-3">Women's Collections</h4>
+                                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque libero, reprehenderit laborum aut eius temporibus iusto ipsum facere pariatur! Ipsa eum molestiae, animi ratione blanditiis cum mollitia illum voluptatem eligendi.</p>
+                                <button class="btn btn-success" style="border-radius: 20px;">Go To Store  <i class="fas fa-hand-point-right" style="color: white;"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <img src="Images/femaleshopping.jpg" alt="maleshop" class="card-img-top">
+                        </div>
+                    </div>
+                </div>
+                
+                <hr>
+                <div class="text-center mt-5 mb-5">
+                    <h6>Most Popular Items</h6>
+                </div>
+                <div class="row mt-5 mb-5">
+                    <div class="col-md-3">
+                        <div class="card text-center">
+                            <img src="Images/Album 1.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p>Product 1</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-center">
+                            <img src="Images/Album 4.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p>Product 2</p>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-center">
+                            <img src="Images/Album 2.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p>Product 3</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card text-center">
+                            <img src="Images/Album 3.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p>Product 4</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <footer class="main-footer mt-5">
+            <div class="container main-footer-container">
+                <h3 class="band-name">The Nike Store</h3>
+                <ul class="nav footer-nav text-right">
+                    <li>
+                        <a href="https://www.youtube.com" target="_blank">
+                            <img src="Images/YouTube Logo.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.spotify.com" target="_blank">
+                            <img src="Images/Spotify Logo.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com" target="_blank">
+                            <img src="Images/Facebook Logo.png">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>
