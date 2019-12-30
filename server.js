@@ -4,13 +4,14 @@ if (process.env.NODE_ENV !== 'production') {
 const express = require('express')
 const app = express();
 const fs = require('fs')
-const CORS = require('cors')
+const cors = require('cors')
 const port = process.env.PORT || 3001;
 
 
 app.set('view engine', 'ejs')
 app.use(express.json())
 app.use(express.static('public'))
+app.use(cors());
  
 app.get('/', (req,res) => {
   res.render('index.ejs');

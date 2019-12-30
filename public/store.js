@@ -70,13 +70,36 @@ function ready() {
 // })
 
 function purchaseClicked() {
+
     var priceElement = document.getElementsByClassName('cart-total-price')[0]
     var price = parseFloat(priceElement.innerText.replace('$', '')) * 100
 
     console.log(price);
-    // stripeHandler.open({
-    //     amount: price
-    // })
+    
+    axios.get('http://localhost:3000/testing')
+        .then(response => {
+            console.log(response.data);
+        }).catch(e => {
+            console.log(e)
+        })
+
+    const requestInfo = {
+        receiver : "uid000002",  //merchant id
+        amount: price,
+        productdesc : "Nike Shoes",
+        currency: "USD",
+        type: "send",
+        note: "Product name = Action , size = 41"
+    }
+    console.log(requestInfo)
+    axios.post('http://localhost:3000/requests',  requestInfo  )
+        .then(response => {
+            console.log(response.data);
+            localStorage.setItem('request', response.data);
+            window.location.replace(`http://localhost:3000/sendrequest/request/${response.data.id}`)
+        }).catch(e => {
+            console.log(e);
+        })
 }
 
 function removeCartItem(event) {
